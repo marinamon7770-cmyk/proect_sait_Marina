@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Обсудить проект — Марина Моненок">
+  <title>Контакты — Марина Моненок</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="contacts">
+
+  <div id="site-header"></div>
+
+  <main>
+    <div class="page-top container">
+      <a href="index.html" class="back-link">← На главную</a>
+    </div>
+
+    <section class="section section--contacts neuro-deco neuro-deco--contacts">
+      <div class="container">
+        <header class="section-header section-header--center page-intro">
+          <span class="section-label">Контакты</span>
+          <h1 class="section-title">Обсудить проект</h1>
+          <p class="section-subtitle">Напишите, что хотите сделать: сайт, текст, автоматизацию, визуальное оформление или материалы для проекта. Я посмотрю задачу и подскажу, с чего лучше начать.</p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact__info">
+            <h2>Не нужно техническое задание</h2>
+            <p>Достаточно простыми словами объяснить, что хотите получить или что пока не получается.</p>
+            <p>Например:</p>
+            <ul class="contact__examples">
+              <li>«есть идея, но не знаю, как показать»</li>
+              <li>«нужна таблица»</li>
+              <li>«хочу собрать работы в одном месте»</li>
+              <li>«надо оформить посты или группу»</li>
+            </ul>
+          </div>
+
+          <div class="contact__form-wrap">
+            <form id="contact-form" class="form">
+              <div class="form__group">
+                <label class="form__label" for="name">Имя</label>
+                <input type="text" id="name" name="name" class="form__input" placeholder="Например: Анна" required>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="topic">Что хотите обсудить?</label>
+                <input type="text" id="topic" name="topic" class="form__input" placeholder="Сайт, текст, таблицу, калькулятор, визуал, нейроклуб">
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="details">Описание задачи</label>
+                <textarea id="details" name="details" class="form__textarea" placeholder="«нужна страница для услуги», «хочу таблицу для расчётов», «нужны посты для группы»"></textarea>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="link">Ссылка на проект</label>
+                <input type="url" id="link" name="link" class="form__input" placeholder="ВК, сайт, папка, документ или пример">
+                <span class="form__hint">Необязательное поле</span>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="contact-method">Удобный способ связи</label>
+                <input type="text" id="contact-method" name="contact" class="form__input" placeholder="Telegram, ВК, WhatsApp или другой способ" required>
+              </div>
+              <button type="submit" class="btn btn--primary">Отправить заявку</button>
+            </form>
+            <div id="form-success" class="form__success">
+              Спасибо! Заявка принята. Я свяжусь с вами в ближайшее время.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/section-bg.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
