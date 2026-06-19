@@ -1,0 +1,166 @@
+/* ============================================================
+   HeroNeuralBackground — фон hero (absolute, под контентом)
+   ============================================================ */
+
+.section--hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #F6EFE4;
+}
+
+.section--hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section--hero .section-bg {
+  display: none !important;
+}
+
+/* --- Фоновый слой --- */
+.hero-neural-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 36%,
+    rgba(0, 0, 0, 0.15) 48%,
+    rgba(0, 0, 0, 0.85) 62%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 36%,
+    rgba(0, 0, 0, 0.15) 48%,
+    rgba(0, 0, 0, 0.85) 62%,
+    #000 100%
+  );
+}
+
+.hero-neural-background__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-neural-background__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-neural-background__glow--purple {
+  width: 480px;
+  height: 480px;
+  top: 5%;
+  right: -4%;
+  background: radial-gradient(circle, rgba(139, 92, 255, 0.5) 0%, transparent 68%);
+  filter: blur(110px);
+  opacity: 0.42;
+}
+
+.hero-neural-background__glow--cyan {
+  width: 400px;
+  height: 400px;
+  bottom: 8%;
+  right: 18%;
+  background: radial-gradient(circle, rgba(34, 230, 210, 0.45) 0%, transparent 68%);
+  filter: blur(100px);
+  opacity: 0.38;
+}
+
+.hero-neural-background__wave {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.hero-neural-background__line {
+  stroke-linecap: round;
+}
+
+.hero-neural-background__node {
+  stroke: rgba(255, 251, 244, 0.35);
+  stroke-width: 0.4;
+}
+
+.hero-neural-background__spark {
+  fill: none;
+}
+
+/* --- Правый блок — чистый, без декора внутри --- */
+.hero__visual {
+  position: relative;
+  z-index: 1;
+  min-height: 420px;
+}
+
+.hero__collage {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__collage-frame {
+  position: relative;
+  background: #FFFBF4;
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  border: 1px solid rgba(216, 191, 166, 0.65);
+  box-shadow:
+    0 12px 48px rgba(24, 23, 28, 0.06),
+    0 0 32px rgba(139, 92, 255, 0.08);
+}
+
+.hero__window {
+  background: #F6EFE4;
+  border: 1px solid rgba(216, 191, 166, 0.55);
+}
+
+.hero__window-placeholder {
+  background: rgba(246, 239, 228, 0.6);
+  border: 1px dashed rgba(216, 191, 166, 0.7);
+}
+
+.hero__collage-photo.img-placeholder {
+  background: rgba(246, 239, 228, 0.5);
+  border: 1px dashed rgba(216, 191, 166, 0.65);
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .hero-neural-background {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, #000 35%, #000 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, #000 35%, #000 100%);
+    opacity: 0.85;
+  }
+
+  .hero-neural-background__glow--purple {
+    width: 320px;
+    height: 320px;
+    filter: blur(80px);
+    top: -5%;
+    right: 10%;
+  }
+
+  .hero-neural-background__glow--cyan {
+    width: 280px;
+    height: 280px;
+    filter: blur(70px);
+  }
+
+  .hero__visual {
+    min-height: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-neural-background__glow {
+    filter: blur(60px);
+  }
+}
