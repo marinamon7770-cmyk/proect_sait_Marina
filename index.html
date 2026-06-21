@@ -7,8 +7,9 @@
   <title>Марина Моненок — сайты, тексты, автоматизация и визуал</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/reviews.css">
 </head>
 <body data-page="home">
 
@@ -21,13 +22,26 @@
       <div class="container">
         <div class="hero__grid">
           <div class="hero__content">
-            <div class="hero__badge">
-              <span>Сайты</span><span>тексты</span><span>автоматизация</span><span>визуал</span>
-            </div>
-            <h1 class="hero__name">Марина Моненок</h1>
-            <p class="hero__tagline">Собираю идеи в сайты, тексты, таблицы и визуал</p>
-            <p class="hero__title">Сайты, тексты, автоматизация и визуал для творческих проектов и малого бизнеса</p>
+            <p class="hero__eyebrow"><a href="portfolio.html">Portfolio</a></p>
+            <h1 class="hero__headline">
+              <span
+                class="text-type"
+                id="hero-typewriter"
+                data-texts='["Сайты, тексты, автоматизация и визуал для творческих проектов и малого бизнеса"]'
+                data-typing-speed="95"
+                data-deleting-speed="35"
+                data-pause-duration="2200"
+                data-loop="true"
+                data-variable-speed="true"
+                data-hide-cursor-while-deleting="true"
+              >
+                <span class="text-type__content" id="hero-typewriter-text"></span><span class="text-type__cursor" aria-hidden="true">|</span>
+              </span>
+              <span class="visually-hidden">Сайты, тексты, автоматизация и визуал для творческих проектов и малого бизнеса</span>
+            </h1>
             <p class="hero__subtitle">Помогаю оформлять идеи в понятные цифровые решения: сайт, текст, калькулятор, таблицу, обложку или визуал для проекта.</p>
+            <p class="hero__name">Марина Моненок</p>
+            <p class="hero__tagline">Собираю идеи в сайты, тексты, таблицы и визуал</p>
             <div class="hero__actions btn-group">
               <a href="portfolio.html" class="btn btn--primary">Посмотреть портфолио</a>
               <a href="contacts.html" class="btn btn--secondary">Обсудить проект</a>
@@ -38,27 +52,21 @@
             </a>
           </div>
           <div class="hero__visual">
-            <div class="hero__collage">
-              <div class="hero__collage-frame">
-                <div class="hero__collage-windows">
-                  <div class="hero__window hero__window--site">
-                    <p class="hero__window-label">Сайт</p>
-                    <div class="hero__window-placeholder">Заглушка: макет сайта</div>
-                  </div>
-                  <div class="hero__window">
-                    <p class="hero__window-label">Таблица</p>
-                    <div class="hero__window-placeholder">Заглушка: таблица</div>
-                  </div>
-                  <div class="hero__window">
-                    <p class="hero__window-label">Текст</p>
-                    <div class="hero__window-placeholder">Заглушка: текст</div>
-                  </div>
-                </div>
-                <div class="hero__collage-photo img-placeholder img-placeholder--wide">
-                  <span>Фото Марины или рабочий визуал</span>
+            <figure class="hero__photo-wrap">
+              <div class="hero__photo-frame">
+                <div class="hero__photo-inner">
+                  <img
+                    src="images/marina-hero.jpg"
+                    alt="Марина Моненок — сайты, тексты, автоматизация и визуал"
+                    class="hero__photo"
+                    width="768"
+                    height="1024"
+                    loading="eager"
+                    decoding="async"
+                  >
                 </div>
               </div>
-            </div>
+            </figure>
           </div>
         </div>
       </div>
@@ -127,6 +135,30 @@
       </div>
     </section>
 
+    <!-- Отзывы -->
+    <section id="reviews" class="section section--reviews">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <span class="section-label">Отзывы</span>
+          <h2 class="section-title">Что говорят клиенты</h2>
+          <p class="section-subtitle">Отзывы о сайтах, текстах, таблицах и визуале — листайте кнопками или кликом по карточке.</p>
+        </header>
+        <div class="reviews-carousel" id="reviews-carousel">
+          <div class="reviews-stack" id="reviews-stack" aria-live="polite"></div>
+          <div class="reviews-nav">
+            <button type="button" class="reviews-nav__btn reviews-nav__btn--prev cursor-target" id="reviews-prev" aria-label="Предыдущий отзыв">
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="reviews-dots" id="reviews-dots" role="tablist" aria-label="Выбор отзыва"></div>
+            <button type="button" class="reviews-nav__btn reviews-nav__btn--next cursor-target" id="reviews-next" aria-label="Следующий отзыв">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <p class="reviews-hint">Клик по карточке — следующий отзыв · свайп на телефоне</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Короткий блок нейроклуба -->
     <section id="neuroclub-preview" class="section section--neuroclub section--preview">
       <div class="container">
@@ -182,7 +214,11 @@
   <div id="site-footer"></div>
 
   <script src="js/layout.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/hero-typewriter.js"></script>
   <script src="js/portfolio-data.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/reviews-data.js"></script>
+  <script src="js/reviews-stack.js"></script>
 </body>
 </html>
