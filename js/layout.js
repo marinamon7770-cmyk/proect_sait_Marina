@@ -45,7 +45,7 @@
     if (!el) return;
 
     el.innerHTML = `
-      <footer class="footer neuro-deco neuro-deco--footer">
+      <footer class="footer">
         <div class="container footer__inner-wrap">
           <div class="footer__grid">
             <div>
@@ -97,8 +97,4 @@
   renderFooter();
   initHeaderScroll();
   initMobileNav();
-
-  if (typeof initSectionBackgrounds === 'function') {
-    initSectionBackgrounds();
-  }
 })();
